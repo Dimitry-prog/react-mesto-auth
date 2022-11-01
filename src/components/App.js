@@ -1,17 +1,14 @@
 import Header from "./Header";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
 import InfoTooltip from "./InfoTooltip";
+import AppRouter from "./AppRouter";
 
 function App() {
 
   return (
     <div className="page">
       <Header/>
+      <AppRouter/>
       <InfoTooltip/>
-      <SignIn/>
-      <SignUp/>
-
     </div>
   );
 }
