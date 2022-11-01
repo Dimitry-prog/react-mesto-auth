@@ -1,0 +1,10 @@
+.signup__link {
+  color: var(--main-text-color);
+  text-align: center;
+  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  text-decoration: none;
+  display: block;
+  padding-top: 15px;
+}

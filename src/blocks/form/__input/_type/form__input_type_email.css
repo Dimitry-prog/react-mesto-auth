@@ -1,0 +1,16 @@
+.form__input_type_email {
+  background-color: var(--main-background-color);
+  border-bottom: 2px solid var(--input-sign-color);
+}
+
+.form__input_type_email::placeholder {
+  color: var(--input-sign-color);
+}
+
+.form__input_type_email:focus {
+  border-bottom: 2px solid var(--main-text-color);
+}
+
+.form__input_type_email:hover::placeholder {
+  color: var(--main-text-color);
+}

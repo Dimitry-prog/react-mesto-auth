@@ -6,12 +6,14 @@ import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddCardPopup from "./AddCardPopup";
 import ConfirmDeleteCardPopup from "./ConfirmDeleteCardPopup";
+import SignUp from "./SignUp";
 
 function App() {
 
   return (
     <div className="page">
       <Header/>
+      <SignUp/>
       <Main/>
       <Footer/>
 

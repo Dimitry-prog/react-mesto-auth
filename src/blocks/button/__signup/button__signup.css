@@ -1,0 +1,9 @@
+.button__signup {
+  background-color: var(--main-text-color);
+  color: var(--main-background-color);
+  margin-top: 215px;
+}
+
+.button__signup:hover {
+  opacity: var(--button-save-opacity);
+}
