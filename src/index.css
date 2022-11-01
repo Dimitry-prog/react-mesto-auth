@@ -48,6 +48,7 @@
 @import url(./blocks/button/button_disabled.css);
 @import url(./blocks/button/_type/button_type_avatar.css);
 @import url(./blocks/button/__signup/button__signup.css);
+@import url(./blocks/button/__signin/button__signin.css);
 
 /**** PROFILE ****/
 
@@ -120,6 +121,8 @@
 @import url(./blocks/form/__title/form__title_signup.css);
 @import url(./blocks/form/__input/_type/form__input_type_email.css);
 @import url(./blocks/form/__input/_type/form__input_type_password.css);
+@import url(./blocks/form/__signin/form__signin.css);
+@import url(./blocks/form/__title/form__title_signin.css);
 
 /**** LOADER ****/
 
@@ -131,3 +134,7 @@
 
 @import url(./blocks/signup/signup.css);
 @import url(./blocks/signup/__link/signup__link.css);
+
+/**** SIGNIN ****/
+
+@import url(./blocks/signin/signin.css);
