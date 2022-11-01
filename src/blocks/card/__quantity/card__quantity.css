@@ -1,0 +1,7 @@
+.card__quantity {
+  margin: 0;
+  font-size: var(--font-size-figcaption);
+  line-height: var(--line-height-figcaption);
+  font-weight: var(--font-weight-400);
+  color: var(--main-background-color);
+}

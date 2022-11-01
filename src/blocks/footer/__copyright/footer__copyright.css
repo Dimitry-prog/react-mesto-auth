@@ -1,0 +1,14 @@
+.footer__copyright {
+  margin: 0;
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+  font-weight: var( --font-weight-400);
+  color: var( --header-border-color);
+}
+
+@media screen and (max-width: 420px) {
+  .footer__copyright {
+    font-size: var(--font-size-input);
+    line-height: var(--line-height-input);
+  }
+}

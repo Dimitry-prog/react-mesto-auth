@@ -1,0 +1,31 @@
+.page {
+  margin: 0 auto;
+  padding: 0 200px;
+  box-sizing: border-box;
+  max-width: var(--max-width);
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  font-family: var(--font-family-main);
+  font-style: var(--font-style-main);
+  font-size: var(--font-size-cards);
+  line-height: var(--line-height-cards);
+  font-weight: var(--font-weight-900);
+}
+
+@media screen and (max-width: 1063px) {
+  .page {
+    padding: 0 115px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .page {
+    padding: 0 75px;
+  }
+}
+
+@media screen and (max-width: 487px) {
+  .page {
+    padding: 0;
+  }
+}

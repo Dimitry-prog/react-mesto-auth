@@ -1,0 +1,26 @@
+.button_type_avatar {
+  align-self: center;
+  background-image: url(../../../images/edit-pen.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 26px;
+  height: 24px;
+  width: 24px;
+  border: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--input-transition);
+}
+
+.button_type_avatar:hover {
+  opacity: var(--delete-opacity);
+}
+
+@media screen and (max-width: 420px) {
+  .button_type_avatar {
+    width: 18px;
+    height: 18px;
+    background-size: 7.5px;
+  }
+}

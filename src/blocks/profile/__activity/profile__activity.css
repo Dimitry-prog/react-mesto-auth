@@ -1,0 +1,37 @@
+.profile__activity {
+  margin: 0;
+  font-size: var(--font-size-main);
+  font-weight: var(--font-weight-400);
+  line-height: var(--line-height-main);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+@media screen and (max-width: 1030px) {
+  .profile__activity {
+    max-width: 420px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .profile__activity {
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .profile__activity {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .profile__activity {
+    font-size: 14px;
+    line-height: 17px;
+    max-width: 235px;
+    grid-column: 1 /-1;
+  }
+}

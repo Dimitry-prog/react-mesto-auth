@@ -1,0 +1,11 @@
+.button__icon_type_add {
+  width: 22px;
+  height: 22px;
+}
+
+@media screen and (max-width: 420px) {
+  .button__icon_type_add {
+    width: 16px;
+    height: 16px;
+  }
+}

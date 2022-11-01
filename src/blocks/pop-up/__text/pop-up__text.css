@@ -1,0 +1,6 @@
+.pop-up__text {
+  margin-top: 10px;
+  font-weight: var( --font-weight-400);
+  font-size: var(--font-size-figcaption);
+  line-height: var(--line-height-figcaption);
+}

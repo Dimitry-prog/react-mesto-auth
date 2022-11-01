@@ -1,0 +1,16 @@
+  .button_type_submit {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    border-radius: 2px;
+    padding: 14px 0;
+    font-size: var(--font-size-main);
+    line-height: var(--line-height-main);
+    margin-top: 15px;
+  }
+  
+  @media screen and (max-width: 470px) {
+    .button_type_submit {
+      font-size: var(--font-size-input);
+      line-height: var(--line-height-input);
+    }
+  }

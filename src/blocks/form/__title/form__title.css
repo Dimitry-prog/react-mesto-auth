@@ -1,0 +1,15 @@
+.form__title {
+  margin: 0 0 50px;
+  color: var(--main-background-color);
+  font-size: var(--font-size-cards);
+  line-height: var(--line-height-cards);
+  font-weight: var(--font-weight-900);
+}
+
+@media screen and (max-width: 420px) {
+  .form__title {
+    margin-bottom: 75px;
+    font-size: var(--font-size-main);
+    line-height: var(--line-height-main);
+  }
+}

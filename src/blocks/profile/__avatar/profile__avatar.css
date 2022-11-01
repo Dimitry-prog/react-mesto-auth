@@ -1,0 +1,15 @@
+.profile__avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__avatar:hover .profile__img {
+  opacity: var(--button-save-opacity);
+}
+
+.profile__avatar:hover .button_type_avatar {
+  visibility: visible;
+  opacity: 1;
+}

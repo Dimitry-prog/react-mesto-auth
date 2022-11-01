@@ -1,0 +1,10 @@
+.form__error-message {
+  font-size: var(--input-error-message-font-size);
+  line-height: var(--input-error-message-line-height);
+  color: var(--input-error-message-color);
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  top: calc(100% - 30px);
+}

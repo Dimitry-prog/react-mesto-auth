@@ -1,0 +1,27 @@
+.profile__add {
+  width: 150px;
+  height: 50px;
+  background-image: url(../../../images/addPost.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 22px;
+}
+
+@media screen and (max-width: 893px) {
+  .profile__add {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .profile__add {
+    width: 100%;
+    grid-column: 1 / -1;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile__add {
+    background-size: 16px;
+  }
+}

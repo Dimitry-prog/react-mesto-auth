@@ -1,0 +1,11 @@
+.pop-up__overlay {
+  max-width: 430px;
+  width: 100%;
+  position: relative;
+}
+
+@media screen and (max-width: 470px) {
+  .pop-up__overlay {
+    max-width: 280px;
+  }
+}

@@ -1,0 +1,12 @@
+.input {
+  border: none;
+  border-bottom: 1px solid var(--input-border-opacity);
+  outline: none;
+  font-family: var(--font-family-main);
+  font-style: var(--font-style-main);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  font-weight: var( --font-weight-400);
+  padding: 0 0 13px;
+  transition: var(--input-transition);
+}

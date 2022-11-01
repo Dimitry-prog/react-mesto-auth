@@ -1,0 +1,5 @@
+.pop-up__text-delete {
+  font-weight: var( --font-weight-900);
+  font-size: var(--font-size-cards);
+  line-height: var(--line-height-cards);
+}

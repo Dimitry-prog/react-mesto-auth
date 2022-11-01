@@ -1,0 +1,7 @@
+.form__input_type_place {
+  padding: 13px;
+}
+
+.form__input_type_place:focus {
+  outline: 2px solid var(--input-outline);
+}

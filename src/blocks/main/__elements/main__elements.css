@@ -1,0 +1,9 @@
+.main__elements {
+  padding-bottom: 66px;
+}
+
+@media screen and (max-width: 430px) {
+  .main__elements {
+    padding-bottom: 50px;
+  }
+}

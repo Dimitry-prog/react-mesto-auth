@@ -1,0 +1,20 @@
+.form__input_type_save {
+  background-color: var(--main-background-color);
+  color: var(--main-text-color);
+  border-radius: 2px;
+  padding: 14px 0;
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+}
+
+.form__input_type_save:hover {
+  cursor: pointer;
+  opacity: var(--button-save-opacity);
+}
+
+@media screen and (max-width: 470px) {
+  .form__input_type_save {
+    font-size: var(--font-size-input);
+    line-height: var(--line-height-input);
+  }
+}

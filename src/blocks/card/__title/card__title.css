@@ -1,0 +1,10 @@
+.card__title {
+  margin: 0;
+  color: var(--main-background-color);
+  font-size: var(--font-size-cards);
+  line-height: var(--line-height-cards);
+  font-weight: var( --font-weight-900);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
