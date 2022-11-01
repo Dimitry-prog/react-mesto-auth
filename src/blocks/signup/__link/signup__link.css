@@ -8,3 +8,9 @@
   display: block;
   padding-top: 15px;
 }
+
+@media screen and (max-width: 470px) {
+  .signup__link {
+    padding-top: 20px;
+  }
+}

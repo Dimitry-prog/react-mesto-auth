@@ -7,3 +7,11 @@
 .button__signin:hover {
   opacity: var(--button-save-opacity);
 }
+
+@media screen and (max-width: 470px) {
+  .button__signin {
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 170px;
+  }
+}

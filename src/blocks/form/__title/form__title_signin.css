@@ -2,3 +2,10 @@
   color: var(--main-text-color);
   text-align: center;
 }
+
+@media screen and (max-width: 470px) {
+  .form__title_signin {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
