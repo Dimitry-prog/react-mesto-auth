@@ -1,1 +1,12 @@
-.header {}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 430px) {
+  .header {
+    padding-bottom: 30px;
+  }
+}

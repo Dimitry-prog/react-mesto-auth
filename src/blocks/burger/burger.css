@@ -1,0 +1,16 @@
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 760px) {
+  .burger {
+    cursor: pointer;
+    border: none;
+    background-color: var(--main-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+  }
+}

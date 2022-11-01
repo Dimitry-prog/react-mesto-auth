@@ -141,3 +141,8 @@
 /**** SIGNIN ****/
 
 @import url(./blocks/signin/signin.css);
+
+/**** BURGER ****/
+
+@import url(./blocks/burger/burger.css);
+@import url(./blocks/burger/__line/burger__line.css);
