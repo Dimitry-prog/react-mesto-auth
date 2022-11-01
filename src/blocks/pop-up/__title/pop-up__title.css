@@ -1,0 +1,16 @@
+.pop-up__title {
+  color: var(--main-background-color);
+  font-size: var(--font-size-cards);
+  line-height: var(--line-height-cards);
+  font-weight: var(--font-weight-900);
+  margin: 0 36px 60px;
+  text-align: center;
+}
+
+@media screen and (max-width: 420px) {
+  .pop-up__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0 18px 50px;
+  }
+}
