@@ -1,10 +1,24 @@
-import React from "react";
-import {Route, Routes} from "react-router-dom";
+import React, {useEffect} from "react";
+import {Route, Routes, useNavigate} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "../routes/routesConfig";
 import {useAppContext} from "../context/AppContext";
+import {checkUserToken} from "../authentication/authentication";
 
 const AppRouter = () => {
-  const {isAuth} = useAppContext();
+  const {isAuth, setIsAuth} = useAppContext();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(localStorage.getItem('token')) {
+      const token = localStorage.getItem('token');
+      checkUserToken(token)
+        .then(res => {
+          console.log(res);
+          setIsAuth(true);
+          navigate('/');
+        })
+    }
+  }, []);
 
   return (
     isAuth
