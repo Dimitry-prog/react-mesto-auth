@@ -17,7 +17,7 @@ const SignUp = () => {
         if(res.data){
           setIsAuth(true);
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
-          navigate('/');
+          navigate('/sign-in');
         } else {
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
         }
