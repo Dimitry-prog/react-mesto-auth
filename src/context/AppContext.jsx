@@ -1,6 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import {api} from "../utils/Api";
-import useFormValidation from "../hooks/useFormValidation";
 
 const AppContext = createContext();
 
@@ -15,6 +14,11 @@ const AppProvider = ({children}) => {
   const [isDeleteCardPopupOpen, setIsDeleteCardPopupOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const isOpen = isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard
+  const [isAuth, setIsAuth] = useState(false);
+  const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState({
+    isOpenTooltip: false,
+    type: '',
+  });
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -38,6 +42,7 @@ const AppProvider = ({children}) => {
     setIsAddPlacePopupOpen(false);
     setIsImagePopupOpen(false);
     setIsDeleteCardPopupOpen(false);
+    setIsInfoTooltipPopupOpen({isOpenTooltip: false, type: ''});
   }
 
   const handleDeleteCardSubmit = (e) => {
@@ -160,7 +165,11 @@ const AppProvider = ({children}) => {
         handleDeleteCardSubmit,
         handleAddCardSubmit,
         handleEditAvatarSubmit,
-        handleEditProfileSubmit
+        handleEditProfileSubmit,
+        isAuth,
+        setIsAuth,
+        isInfoTooltipPopupOpen,
+        setIsInfoTooltipPopupOpen
       }}
     >
       {children}

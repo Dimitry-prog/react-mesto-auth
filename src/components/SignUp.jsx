@@ -2,22 +2,27 @@ import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
 import { registerUser} from "../authentication/authentication";
 import {useNavigate} from "react-router-dom";
+import {useAppContext} from "../context/AppContext";
 
 const SignUp = () => {
-  const {values, errors, isValid, handleChange, resetForm} = useFormValidation();
+  const {values, errors, isValid, handleChange} = useFormValidation();
   const navigate = useNavigate();
+  const {setIsAuth, setIsInfoTooltipPopupOpen} = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     registerUser(values.email, values.password)
       .then(res => {
-        if(res.statusCode !== 400){
+        if(res.ok){
+          setIsAuth(true);
+          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
           navigate('/');
+        } else {
+          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
         }
       });
 
-    resetForm();
   }
 
   return (

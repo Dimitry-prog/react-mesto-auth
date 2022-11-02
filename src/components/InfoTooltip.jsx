@@ -4,11 +4,10 @@ import wrong from '../images/wrongSign.svg';
 import {useAppContext} from "../context/AppContext";
 
 const InfoTooltip = () => {
-  const {handleClosePopups} = useAppContext();
-  const isOpenPopup = false
-  const name = 'success'
+  const {handleClosePopups, isInfoTooltipPopupOpen} = useAppContext();
+
   return (
-    <div className={isOpenPopup ? `pop-up pop-up_${name} pop-up_opened` : `pop-up pop-up_${name}`}>
+    <div className={isInfoTooltipPopupOpen.isOpenTooltip ? `pop-up pop-up_opened` : `pop-up`}>
       <div className="pop-up__overlay">
         <button
           onClick={handleClosePopups}
@@ -16,8 +15,9 @@ const InfoTooltip = () => {
         >
         </button>
         <div className='pop-up__content'>
-          <img src={success} alt='Успех' className='pop-up__img'/>
-          <h3 className='pop-up__title'>Вы успешно зарегистрировались!</h3>
+          <img src={isInfoTooltipPopupOpen.type === 'success' ? success : wrong} alt='Успех' className='pop-up__img'/>
+          <h3 className='pop-up__title'>{isInfoTooltipPopupOpen.type === 'success' ? "Вы успешно зарегистрировались!" : "Что-то пошло не так!\n" +
+            "Попробуйте ещё раз."}</h3>
         </div>
       </div>
     </div>
