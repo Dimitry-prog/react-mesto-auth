@@ -17,10 +17,11 @@ const SignIn = () => {
         if(res.token){
           setIsAuth(true);
           navigate('/');
-          console.log(userInfo);
-        } else {
-          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
         }
+      })
+      .catch(e => {
+        console.log(e);
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
       })
   }
 

@@ -18,10 +18,12 @@ const SignUp = () => {
           setUserInfo({email: res.data.email})
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
           navigate('/sign-in');
-        } else {
-          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
         }
-      });
+      })
+      .catch(e => {
+        console.log(e);
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
+      })
 
   }
 
