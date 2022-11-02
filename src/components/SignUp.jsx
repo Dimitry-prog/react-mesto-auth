@@ -14,7 +14,7 @@ const SignUp = () => {
 
     registerUser(values.email, values.password)
       .then(res => {
-        if(res.ok){
+        if(res.data){
           setIsAuth(true);
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
           navigate('/');

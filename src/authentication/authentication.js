@@ -31,7 +31,7 @@ export const authorizeUser = (email, password) => {
     })
     .then(res => res.json())
     .then(res => {
-      if(res.user) {
+      if(res.token) {
         localStorage.setItem('token', res.token);
         return res;
       }
