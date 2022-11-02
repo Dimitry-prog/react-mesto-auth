@@ -1,0 +1,18 @@
+.header__link {
+  text-decoration: none;
+  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+  color: var(--main-text-color);
+}
+
+@media screen and (max-width: 470px) {
+  .header__link {
+    font-size: var(--font-size-input);
+    line-height: var(--line-height-input);
+  }
+}
+
+.header__link:hover {
+  opacity: .8;
+}

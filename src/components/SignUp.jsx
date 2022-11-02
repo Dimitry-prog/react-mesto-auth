@@ -1,13 +1,13 @@
 import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
 import { registerUser} from "../authentication/authentication";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
 
 const SignUp = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
   const navigate = useNavigate();
-  const {setIsAuth, setIsInfoTooltipPopupOpen} = useAppContext();
+  const {setIsInfoTooltipPopupOpen, setUserInfo} = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,7 +15,7 @@ const SignUp = () => {
     registerUser(values.email, values.password)
       .then(res => {
         if(res.data){
-          setIsAuth(true);
+          setUserInfo({email: res.data.email})
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
           navigate('/sign-in');
         } else {
@@ -56,7 +56,7 @@ const SignUp = () => {
         </label>
         <button disabled={!isValid} type="submit" className={`button button_type_submit button__signup ${!isValid ? "button_disabled " : ""}`}>Зарегистрироваться</button>
       </form>
-      <a href="#" className='signup__link'>Уже зарегистрированы? Войти</a>
+      <Link to='/sign-in' className='signup__link'>Уже зарегистрированы? Войти</Link>
     </div>
   );
 };

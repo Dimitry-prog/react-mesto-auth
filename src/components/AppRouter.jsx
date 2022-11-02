@@ -13,7 +13,6 @@ const AppRouter = () => {
       const token = localStorage.getItem('token');
       checkUserToken(token)
         .then(res => {
-          console.log(res);
           setIsAuth(true);
           navigate('/');
         })

@@ -1,0 +1,7 @@
+.header__email {
+  margin: 0;
+  font-weight: var(--font-weight-500);
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+  color: var(--main-text-color);
+}

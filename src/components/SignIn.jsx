@@ -7,7 +7,7 @@ import {authorizeUser} from "../authentication/authentication";
 const SignIn = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
   const navigate = useNavigate();
-  const {setIsAuth, setIsInfoTooltipPopupOpen} = useAppContext();
+  const {setIsAuth, setIsInfoTooltipPopupOpen, userInfo} = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +17,7 @@ const SignIn = () => {
         if(res.token){
           setIsAuth(true);
           navigate('/');
+          console.log(userInfo);
         } else {
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
         }

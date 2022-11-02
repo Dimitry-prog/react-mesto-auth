@@ -1,0 +1,8 @@
+.header__link_logout {
+  color: #A9A9A9;
+}
+
+.header__link_logout:hover {
+  opacity: 1;
+  color: var(--main-text-color);
+}
