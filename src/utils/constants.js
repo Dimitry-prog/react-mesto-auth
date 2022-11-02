@@ -40,3 +40,5 @@ export const cardQuantityLikes = document.querySelector('.card__quantity');
 
 export const mainContent = document.querySelector('.content');
 export const loaderContent = document.querySelector('.loader__content');
+
+export const BASE_AUTH_URL = 'https://auth.nomoreparties.co';
