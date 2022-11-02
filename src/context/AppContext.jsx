@@ -20,6 +20,7 @@ const AppProvider = ({children}) => {
     type: '',
   });
   const [userInfo, setUserInfo] = useState({});
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -172,7 +173,9 @@ const AppProvider = ({children}) => {
         isInfoTooltipPopupOpen,
         setIsInfoTooltipPopupOpen,
         userInfo,
-        setUserInfo
+        setUserInfo,
+        isOpenSidebar,
+        setIsOpenSidebar
       }}
     >
       {children}

@@ -1,0 +1,18 @@
+.sidebar__link {
+  text-decoration: none;
+  font-weight: var(--font-weight-400);
+  font-size: var(--font-size-main);
+  line-height: var(--line-height-main);
+  color: #A9A9A9;
+}
+
+@media screen and (max-width: 470px) {
+  .sidebar__link {
+    font-size: var(--font-size-input);
+    line-height: var(--line-height-input);
+  }
+}
+
+.sidebar__link:hover {
+  color: var(--main-text-color);
+}

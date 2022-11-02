@@ -1,0 +1,24 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid var(--header-border-color-plus-opacity);
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--popup-transition);
+}
+
+.sidebar_show {
+  height: min-content;
+  opacity: 1;
+  visibility: visible;
+  padding: 40px 0;
+}
+
+@media screen and (min-width: 760px) {
+  .sidebar {
+    display: none;
+  }
+}

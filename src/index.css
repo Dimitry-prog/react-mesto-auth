@@ -150,3 +150,9 @@
 
 @import url(./blocks/burger/burger.css);
 @import url(./blocks/burger/__line/burger__line.css);
+
+/**** SIDEBAR ****/
+
+@import url(./blocks/sidebar/sidebar.css);
+@import url(./blocks/sidebar/__link/sidebar__link.css);
+@import url(./blocks/sidebar/__email/sidebar__email.css);

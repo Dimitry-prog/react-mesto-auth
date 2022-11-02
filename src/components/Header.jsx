@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from '../images/logo.svg';
 import {Link, useLocation} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
 
 const Header = () => {
   const {pathname} = useLocation();
-  const {isAuth, userInfo, setIsAuth} = useAppContext();
+  const {isAuth, userInfo, setIsAuth, isOpenSidebar, setIsOpenSidebar} = useAppContext();
 
   return (
     <header className="header page__header">
@@ -28,10 +28,11 @@ const Header = () => {
             >Выйти</Link>
           </div>
           <button
+            onClick={() => setIsOpenSidebar(!isOpenSidebar)}
             className="burger"
           >
           <span
-            className="burger__line"
+            className={`burger__line ${isOpenSidebar ? 'burger__line_active' : ''}`}
           ></span>
           </button>
         </div>

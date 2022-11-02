@@ -3,6 +3,7 @@
   height: 2px;
   width: 20px;
   background: var(--main-text-color);
+  position: absolute;
 }
 
 .burger__line::after, .burger__line::before {
