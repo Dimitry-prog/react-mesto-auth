@@ -12,4 +12,5 @@
   visibility: hidden;
   opacity: 0;
   transition: var(--popup-transition);
+  transform: scale(0);
 }
