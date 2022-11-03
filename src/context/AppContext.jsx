@@ -1,5 +1,7 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import {api} from "../utils/Api";
+import {checkUserToken} from "../utils/authentication";
+import {useNavigate} from "react-router-dom";
 
 const AppContext = createContext();
 
@@ -21,6 +23,7 @@ const AppProvider = ({children}) => {
   });
   const [userInfo, setUserInfo] = useState({});
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+  const navigate = useNavigate();
 
   const handleEditAvatarClick = () => {
     setIsEditAvatarPopupOpen(true);
@@ -140,6 +143,19 @@ const AppProvider = ({children}) => {
       }
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if(token) {
+      checkUserToken(token)
+        .then(res => {
+          setIsAuth(true);
+          navigate('/');
+        })
+        .catch(e => console.log(e));
+    }
+  }, []);
 
   return (
     <AppContext.Provider
