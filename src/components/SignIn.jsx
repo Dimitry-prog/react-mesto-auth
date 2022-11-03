@@ -1,35 +1,19 @@
 import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
-import {useNavigate} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
-import {authorizeUser} from "../utils/authentication";
 
 const SignIn = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
-  const navigate = useNavigate();
-  const {setIsAuth, setIsInfoTooltipPopupOpen, userInfo} = useAppContext();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    authorizeUser(values.email, values.password)
-      .then(res => {
-        if(res.token){
-          localStorage.setItem('token', res.token);
-          setIsAuth(true);
-          navigate('/');
-        }
-      })
-      .catch(e => {
-        console.log(e);
-        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
-            "Попробуйте ещё раз."})
-      })
-  }
+  const {handleLoginSubmit} = useAppContext();
 
   return (
     <div className='signin'>
-      <form onSubmit={handleSubmit} className='form form__signin' name='form_signin' noValidate>
+      <form
+        onSubmit={(e) => handleLoginSubmit(e, values.email, values.password)}
+        className='form form__signin'
+        name='form_signin'
+        noValidate
+      >
         <h2 className='form__title form__title_signin'>Вход</h2>
         <label className="form__label">
           <input

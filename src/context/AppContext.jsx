@@ -1,6 +1,6 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import {api} from "../utils/Api";
-import {checkUserToken} from "../utils/authentication";
+import {authorizeUser, checkUserToken, registerUser} from "../utils/authentication";
 import {useNavigate} from "react-router-dom";
 
 const AppContext = createContext();
@@ -48,7 +48,7 @@ const AppProvider = ({children}) => {
     setIsAddPlacePopupOpen(false);
     setIsImagePopupOpen(false);
     setIsDeleteCardPopupOpen(false);
-    setIsInfoTooltipPopupOpen({isOpenTooltip: false, type: ''});
+    setIsInfoTooltipPopupOpen({isOpenTooltip: false, type: '', message: ''});
   }
 
   const handleDeleteCardSubmit = (e) => {
@@ -106,6 +106,42 @@ const AppProvider = ({children}) => {
         console.log(e);
       })
       .finally(() => setIsLoading(false));
+  }
+
+  const handleRegisterSubmit = (e, email, password) => {
+    e.preventDefault();
+
+    registerUser(email, password)
+      .then(res => {
+        if(res.data){
+          setUserInfo({email: res.data.email})
+          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success', message: "Вы успешно зарегистрировались!"})
+          navigate('/sign-in');
+        }
+      })
+      .catch(e => {
+        console.log(e);
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
+            "Попробуйте ещё раз."})
+      });
+  }
+
+  const handleLoginSubmit = (e, email, password) => {
+    e.preventDefault();
+
+    authorizeUser(email, password)
+      .then(res => {
+        if(res.token){
+          localStorage.setItem('token', res.token);
+          setIsAuth(true);
+          navigate('/');
+        }
+      })
+      .catch(e => {
+        console.log(e);
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
+            "Попробуйте ещё раз."})
+      })
   }
 
   useEffect(() => {
@@ -192,7 +228,9 @@ const AppProvider = ({children}) => {
         userInfo,
         setUserInfo,
         isOpenSidebar,
-        setIsOpenSidebar
+        setIsOpenSidebar,
+        handleRegisterSubmit,
+        handleLoginSubmit
       }}
     >
       {children}

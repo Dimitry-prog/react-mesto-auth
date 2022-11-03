@@ -1,36 +1,19 @@
 import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
-import { registerUser} from "../utils/authentication";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
 
 const SignUp = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
-  const navigate = useNavigate();
-  const {setIsInfoTooltipPopupOpen, setUserInfo} = useAppContext();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    registerUser(values.email, values.password)
-      .then(res => {
-        if(res.data){
-          setUserInfo({email: res.data.email})
-          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success', message: "Вы успешно зарегистрировались!"})
-          navigate('/sign-in');
-        }
-      })
-      .catch(e => {
-        console.log(e);
-        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
-            "Попробуйте ещё раз."})
-      })
-
-  }
+  const {handleRegisterSubmit} = useAppContext();
 
   return (
     <div className='signup'>
-      <form onSubmit={handleSubmit} className='form form__signup' name='form_signup' noValidate>
+      <form
+        onSubmit={(e) => handleRegisterSubmit(e, values.email, values.password)}
+        className='form form__signup' name='form_signup'
+        noValidate
+      >
         <h2 className='form__title form__title_signup'>Регистрация</h2>
         <label className="form__label">
           <input
