@@ -20,6 +20,7 @@ const AppProvider = ({children}) => {
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState({
     isOpenTooltip: false,
     type: '',
+    message: ''
   });
   const [userInfo, setUserInfo] = useState({});
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);

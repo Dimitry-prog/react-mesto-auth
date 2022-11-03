@@ -15,9 +15,8 @@ const InfoTooltip = () => {
         >
         </button>
         <div className='pop-up__content'>
-          <img src={isInfoTooltipPopupOpen.type === 'success' ? success : wrong} alt='Успех' className='pop-up__img'/>
-          <h3 className='pop-up__title'>{isInfoTooltipPopupOpen.type === 'success' ? "Вы успешно зарегистрировались!" : "Что-то пошло не так!\n" +
-            "Попробуйте ещё раз."}</h3>
+          <img src={isInfoTooltipPopupOpen.type === 'success' ? success : wrong} alt={isInfoTooltipPopupOpen.type} className='pop-up__img'/>
+          <h3 className='pop-up__title'>{isInfoTooltipPopupOpen.message}</h3>
         </div>
       </div>
     </div>

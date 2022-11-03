@@ -16,13 +16,14 @@ const SignUp = () => {
       .then(res => {
         if(res.data){
           setUserInfo({email: res.data.email})
-          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success'})
+          setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success', message: "Вы успешно зарегистрировались!"})
           navigate('/sign-in');
         }
       })
       .catch(e => {
         console.log(e);
-        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
+            "Попробуйте ещё раз."})
       })
 
   }

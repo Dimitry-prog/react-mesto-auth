@@ -22,7 +22,8 @@ const SignIn = () => {
       })
       .catch(e => {
         console.log(e);
-        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail'})
+        setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
+            "Попробуйте ещё раз."})
       })
   }
 
