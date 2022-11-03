@@ -114,7 +114,6 @@ const AppProvider = ({children}) => {
     registerUser(email, password)
       .then(res => {
         if(res.data){
-          setUserInfo({email: res.data.email})
           setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'success', message: "Вы успешно зарегистрировались!"})
           navigate('/sign-in');
         }
@@ -133,6 +132,7 @@ const AppProvider = ({children}) => {
       .then(res => {
         if(res.token){
           localStorage.setItem('token', res.token);
+          setUserInfo({email});
           setIsAuth(true);
           navigate('/');
         }
@@ -145,18 +145,20 @@ const AppProvider = ({children}) => {
   }
 
   useEffect(() => {
-    setIsLoading(true);
-    api.getInitialAppState()
-      .then(res => {
-        const [userInfo, initCards] = res;
-        setCurrentUser(userInfo);
-        setCards(initCards);
-      })
-      .catch(e => {
-        console.log(e);
-      })
-      .finally(() => setIsLoading(false));
-  }, []);
+    if(isAuth) {
+      setIsLoading(true);
+      api.getInitialAppState()
+        .then(res => {
+          const [userInfo, initCards] = res;
+          setCurrentUser(userInfo);
+          setCards(initCards);
+        })
+        .catch(e => {
+          console.log(e);
+        })
+        .finally(() => setIsLoading(false));
+    }
+  }, [isAuth]);
 
   useEffect(() => {
     const closePopupByEscape = (e) => {
@@ -187,6 +189,7 @@ const AppProvider = ({children}) => {
     if(token) {
       checkUserToken(token)
         .then(res => {
+          setUserInfo({email: res.data.email});
           setIsAuth(true);
           navigate('/');
         })
