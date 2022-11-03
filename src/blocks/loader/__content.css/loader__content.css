@@ -1,7 +1,7 @@
 .loader__content {
   color: green;
   position: relative;
-  font-size: 3rem;
+  font-size: 40px;
   animation-delay: -0.16s;
   display: none;
 }
@@ -23,12 +23,12 @@
 }
 
 .loader__content:before {
-  left: -1.5em;
+  left: -60px;
   animation-delay: -0.32s;
 }
 
 .loader__content:after {
-  left: 1.5em;
+  left: 60px;
   animation-delay: 0.8s;
 }
 
@@ -37,10 +37,8 @@
   80%,
   100% {
     box-shadow: 0 0;
-    /*     height: 4em; */
   }
   40% {
-    box-shadow: 0 -2em;
-    /*     height: 5em; */
+    box-shadow: 0 -80px;
   }
 }

@@ -4,7 +4,7 @@ import {useAppContext} from "../context/AppContext";
 
 const SignIn = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
-  const {handleLoginSubmit} = useAppContext();
+  const {handleLoginSubmit, isLoading} = useAppContext();
 
   return (
     <div className='signin'>
@@ -39,7 +39,13 @@ const SignIn = () => {
             placeholder="Пароль"/>
           <span className="form__error-message form__error-message_active password-error">{errors.password}</span>
         </label>
-        <button disabled={!isValid} type="submit" className={`button button_type_submit button__signin ${!isValid ? "button_disabled " : ""}`}>Войти</button>
+        <button
+          disabled={!isValid}
+          type="submit"
+          className={`button button_type_submit button__signin ${!isValid ? "button_disabled " : ""}`}
+        >
+          {isLoading ? 'Выполняем вход...' : "Войти"}
+        </button>
       </form>
     </div>
   );

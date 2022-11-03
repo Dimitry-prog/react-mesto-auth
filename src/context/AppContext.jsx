@@ -110,7 +110,7 @@ const AppProvider = ({children}) => {
 
   const handleRegisterSubmit = (e, email, password) => {
     e.preventDefault();
-
+    setIsLoading(true);
     registerUser(email, password)
       .then(res => {
         if(res.data){
@@ -122,12 +122,13 @@ const AppProvider = ({children}) => {
         console.log(e);
         setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
             "Попробуйте ещё раз."})
-      });
+      })
+      .finally(() => setIsLoading(false));
   }
 
   const handleLoginSubmit = (e, email, password) => {
     e.preventDefault();
-
+    setIsLoading(true);
     authorizeUser(email, password)
       .then(res => {
         if(res.token){
@@ -142,6 +143,7 @@ const AppProvider = ({children}) => {
         setIsInfoTooltipPopupOpen({isOpenTooltip: true, type: 'fail', message: "Что-то пошло не так!\n" +
             "Попробуйте ещё раз."})
       })
+      .finally(() => setIsLoading(false));
   }
 
   useEffect(() => {

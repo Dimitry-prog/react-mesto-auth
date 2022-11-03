@@ -5,7 +5,7 @@ import {useAppContext} from "../context/AppContext";
 
 const SignUp = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
-  const {handleRegisterSubmit} = useAppContext();
+  const {handleRegisterSubmit, isLoading} = useAppContext();
 
   return (
     <div className='signup'>
@@ -40,7 +40,13 @@ const SignUp = () => {
             placeholder="Пароль"/>
           <span className="form__error-message form__error-message_active password-error">{errors.password}</span>
         </label>
-        <button disabled={!isValid} type="submit" className={`button button_type_submit button__signup ${!isValid ? "button_disabled " : ""}`}>Зарегистрироваться</button>
+        <button
+          disabled={!isValid}
+          type="submit"
+          className={`button button_type_submit button__signup ${!isValid ? "button_disabled " : ""}`}
+        >
+          { isLoading ? "Регистрируем вас..." :'Зарегистрироваться' }
+        </button>
       </form>
       <Link to='/sign-in' className='signup__link'>Уже зарегистрированы? Войти</Link>
     </div>
