@@ -1,6 +1,6 @@
 import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
-import { registerUser} from "../authentication/authentication";
+import { registerUser} from "../utils/authentication";
 import {Link, useNavigate} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
 

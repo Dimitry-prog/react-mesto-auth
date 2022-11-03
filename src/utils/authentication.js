@@ -1,7 +1,18 @@
-import {BASE_AUTH_URL} from "../utils/constants";
+import {BASE_AUTH_URL} from "./constants";
+
+const request = (url, options) => {
+  return fetch(url, options).then(getResponseData)
+}
+
+const getResponseData = (res) => {
+  if (!res.ok) {
+    return Promise.reject(`Ошибка: ${res.status}`);
+  }
+  return res.json();
+}
 
 export const registerUser = (email, password) => {
-  return fetch(`${BASE_AUTH_URL}/signup`,
+  return request(`${BASE_AUTH_URL}/signup`,
     {
       method: 'POST',
       headers: {
@@ -11,14 +22,11 @@ export const registerUser = (email, password) => {
         email,
         password
       })
-    })
-    .then(res => res.json())
-    .then(res => res)
-    .catch(e => console.log(e));
+    });
 };
 
 export const authorizeUser = (email, password) => {
-  return fetch(`${BASE_AUTH_URL}/signin`,
+  return request(`${BASE_AUTH_URL}/signin`,
     {
       method: 'POST',
       headers: {
@@ -28,27 +36,16 @@ export const authorizeUser = (email, password) => {
         email,
         password
       })
-    })
-    .then(res => res.json())
-    .then(res => {
-      if(res.token) {
-        localStorage.setItem('token', res.token);
-        return res;
-      }
-    })
-    .catch(e => console.log(e));
+    });
 }
 
 export const checkUserToken = (token) => {
-  return fetch(`${BASE_AUTH_URL}/users/me`,
+  return request(`${BASE_AUTH_URL}/users/me`,
     {
       method: 'GET',
       headers: {
         "Content-Type": "application/json",
         "Authorization" : `Bearer ${token}`
       }
-    })
-    .then(res => res.json())
-    .then(res => res)
-    .catch(e => console.log(e));
+    });
 }

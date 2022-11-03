@@ -2,7 +2,7 @@ import React from "react";
 import useFormValidation from "../hooks/useFormValidation";
 import {useNavigate} from "react-router-dom";
 import {useAppContext} from "../context/AppContext";
-import {authorizeUser} from "../authentication/authentication";
+import {authorizeUser} from "../utils/authentication";
 
 const SignIn = () => {
   const {values, errors, isValid, handleChange} = useFormValidation();
@@ -15,6 +15,7 @@ const SignIn = () => {
     authorizeUser(values.email, values.password)
       .then(res => {
         if(res.token){
+          localStorage.setItem('token', res.token);
           setIsAuth(true);
           navigate('/');
         }

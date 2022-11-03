@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "../routes/routesConfig";
 import {useAppContext} from "../context/AppContext";
-import {checkUserToken} from "../authentication/authentication";
+import {checkUserToken} from "../utils/authentication";
 
 const AppRouter = () => {
   const {isAuth, setIsAuth} = useAppContext();
