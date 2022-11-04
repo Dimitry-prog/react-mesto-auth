@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Dimitry-prog/mesto-react/static/css/main.51246921.css",
-    "main.js": "/Dimitry-prog/mesto-react/static/js/main.774104ac.js",
-    "static/media/Inter-Medium.woff2": "/Dimitry-prog/mesto-react/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
-    "static/media/Inter-Black.woff2": "/Dimitry-prog/mesto-react/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
-    "static/media/Inter-Regular.woff2": "/Dimitry-prog/mesto-react/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
-    "static/media/logo.svg": "/Dimitry-prog/mesto-react/static/media/logo.03b78ada3425e9132ff3db7ea8f4a6f6.svg",
-    "static/media/like.svg": "/Dimitry-prog/mesto-react/static/media/like.1ad06e85f169668a1f36.svg",
-    "static/media/delete.svg": "/Dimitry-prog/mesto-react/static/media/delete.e3c42771bff3aaa52f76f96a20d90bef.svg",
-    "static/media/wrongSign.svg": "/Dimitry-prog/mesto-react/static/media/wrongSign.df8eddf661ff88f2d0efd3d570d14309.svg",
-    "static/media/succsessSign.svg": "/Dimitry-prog/mesto-react/static/media/succsessSign.1b6082f862eac35e2514460237d96ecc.svg",
-    "static/media/heartDark.svg": "/Dimitry-prog/mesto-react/static/media/heartDark.dd6a61e81552be95f4b7.svg",
-    "index.html": "/Dimitry-prog/mesto-react/index.html",
-    "static/media/edit-pen.svg": "/Dimitry-prog/mesto-react/static/media/edit-pen.6c7bf05444b9793fdf6e.svg",
-    "static/media/Close.svg": "/Dimitry-prog/mesto-react/static/media/Close.039f1f5203f653b4bacd.svg",
-    "static/media/addPost.svg": "/Dimitry-prog/mesto-react/static/media/addPost.bed8c136e13907f5eefb.svg",
-    "main.51246921.css.map": "/Dimitry-prog/mesto-react/static/css/main.51246921.css.map",
-    "main.774104ac.js.map": "/Dimitry-prog/mesto-react/static/js/main.774104ac.js.map"
+    "main.css": "/react-mesto-auth/static/css/main.ab3c95ea.css",
+    "main.js": "/react-mesto-auth/static/js/main.08809297.js",
+    "static/media/Inter-Medium.woff2": "/react-mesto-auth/static/media/Inter-Medium.293fd13dbca5a3e450ef.woff2",
+    "static/media/Inter-Black.woff2": "/react-mesto-auth/static/media/Inter-Black.15ca31c0a2a68f76d2d1.woff2",
+    "static/media/Inter-Regular.woff2": "/react-mesto-auth/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
+    "static/media/logo.svg": "/react-mesto-auth/static/media/logo.03b78ada3425e9132ff3db7ea8f4a6f6.svg",
+    "static/media/like.svg": "/react-mesto-auth/static/media/like.1ad06e85f169668a1f36.svg",
+    "static/media/delete.svg": "/react-mesto-auth/static/media/delete.e3c42771bff3aaa52f76f96a20d90bef.svg",
+    "static/media/wrongSign.svg": "/react-mesto-auth/static/media/wrongSign.df8eddf661ff88f2d0efd3d570d14309.svg",
+    "static/media/succsessSign.svg": "/react-mesto-auth/static/media/succsessSign.1b6082f862eac35e2514460237d96ecc.svg",
+    "static/media/heartDark.svg": "/react-mesto-auth/static/media/heartDark.dd6a61e81552be95f4b7.svg",
+    "index.html": "/react-mesto-auth/index.html",
+    "static/media/edit-pen.svg": "/react-mesto-auth/static/media/edit-pen.6c7bf05444b9793fdf6e.svg",
+    "static/media/Close.svg": "/react-mesto-auth/static/media/Close.039f1f5203f653b4bacd.svg",
+    "static/media/addPost.svg": "/react-mesto-auth/static/media/addPost.bed8c136e13907f5eefb.svg",
+    "main.ab3c95ea.css.map": "/react-mesto-auth/static/css/main.ab3c95ea.css.map",
+    "main.08809297.js.map": "/react-mesto-auth/static/js/main.08809297.js.map"
   },
   "entrypoints": [
-    "static/css/main.51246921.css",
-    "static/js/main.774104ac.js"
+    "static/css/main.ab3c95ea.css",
+    "static/js/main.08809297.js"
   ]
 }
