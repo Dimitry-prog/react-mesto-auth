@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": "https://dimitry-prog.github.io/react-mesto-auth/",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
