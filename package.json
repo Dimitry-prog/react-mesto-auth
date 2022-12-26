@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": ".",
+  "homepage": "http://sprint-15.nomoredomains.club/",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
